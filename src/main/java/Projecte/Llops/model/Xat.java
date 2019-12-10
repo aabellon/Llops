@@ -1,11 +1,18 @@
 package Projecte.Llops.model;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 import java.sql.Date;
 @Entity
 @Table(name = "Xat")
 public class Xat {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id")
 private int id=0;
 private String sender;
 private Partida partida;
