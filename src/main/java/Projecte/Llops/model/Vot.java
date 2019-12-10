@@ -28,11 +28,7 @@ public class Vot {
 	@ManyToOne
 	@JoinColumn(name="partida")
 	private Partida partida;
-<<<<<<< HEAD
 	@Column(name = "torn")
-=======
->>>>>>> 37f406776c63ec79b16232b17248a3cbb7143e83
-
 	private int torn = 0;
 
 	public Vot() {
@@ -44,7 +40,7 @@ public class Vot {
 		this.id = id;
 		this.sender = sender;
 		this.receiver = receiver;
-		//this.partida = partida;
+		this.partida = partida;
 		this.torn = torn;
 	}
 
@@ -71,7 +67,6 @@ public class Vot {
 	public void setReceiver(User receiver) {
 		this.receiver = receiver;
 	}
-/*
 	public Partida getPartida() {
 		return partida;
 	}
@@ -79,7 +74,7 @@ public class Vot {
 	public void setPartida(Partida partida) {
 		this.partida = partida;
 	}
-*/
+
 	public int getTorn() {
 		return torn;
 	}
