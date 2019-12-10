@@ -5,9 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import org.hibernate.annotations.Type;
 
 @Entity
 @Table(name = "Vot")
@@ -16,20 +16,24 @@ public class Vot {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
 	private int id = 0;
-	@Column(name = "sender")
-	private String sender;
-	@Type(type = "numeric_boolean")
-	@Column(name = "Receiver")
-	private boolean receiver;
-	@Column(name = "partida")
+	
+	@ManyToOne()
+	@JoinColumn(name="sender")
+	private User sender;
+	
+	@ManyToOne
+	@JoinColumn(name="receiver")
+	private User receiver;
+	
 	private Partida partida;
+	
 	private int torn = 0;
 
 	public Vot() {
 		super();
 	}
 
-	public Vot(int id, String sender, boolean receiver, Partida partida, int torn) {
+	public Vot(int id, User sender, User receiver, Partida partida, int torn) {
 		super();
 		this.id = id;
 		this.sender = sender;
@@ -46,19 +50,19 @@ public class Vot {
 		this.id = id;
 	}
 
-	public String getSender() {
+	public User getSender() {
 		return sender;
 	}
 
-	public void setSender(String sender) {
+	public void setSender(User sender) {
 		this.sender = sender;
 	}
 
-	public boolean isReceiver() {
+	public User isReceiver() {
 		return receiver;
 	}
 
-	public void setReceiver(boolean receiver) {
+	public void setReceiver(User receiver) {
 		this.receiver = receiver;
 	}
 
