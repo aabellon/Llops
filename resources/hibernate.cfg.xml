@@ -22,9 +22,11 @@
 		<property name="hibernate.current_session_context_class">org.hibernate.context.internal.ThreadLocalSessionContext</property>
 
 <!-- Aqui van las clases que mapees. TODAS -->
-		<mapping class="sin.Profesor" />
-		<mapping class="conrelaciones.Profesor" />
-		<mapping class="conrelaciones.Modulo" />
-		<mapping class="conrelaciones.Curso" />
+		<mapping class="Projecte.Llops.Controller.Mort" />
+		<mapping class="Projecte.Llops.Controller.Partida" />
+		<mapping class="Projecte.Llops.Controller.Rol" />
+		<mapping class="Projecte.Llops.Controller.RolJugadorPartida" />
+		<mapping class="Projecte.Llops.Controller.Vot" />
+		<mapping class="Projecte.Llops.Controller.xat" />
 	</session-factory>
 </hibernate-configuration>

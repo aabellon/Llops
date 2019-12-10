@@ -21,9 +21,9 @@ public class Partida {
 	private int torn=0;
 	@Lob
 	@Column(name = "xat")
-	private xat xat;
+	private Xat xat;
 	
-	public Partida(int id, String user, int torn, xat xat) {
+	public Partida(int id, String user, int torn, Xat xat) {
 		super();
 		this.id = id;
 		this.user = user;
@@ -55,10 +55,10 @@ public class Partida {
 	public void setTorn(int torn) {
 		this.torn = torn;
 	}
-	public xat getXat() {
+	public Xat getXat() {
 		return xat;
 	}
-	public void setXat(xat xat) {
+	public void setXat(Xat xat) {
 		this.xat = xat;
 	}
 }
