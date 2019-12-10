@@ -25,17 +25,24 @@ public class Partida {
 	private String user;
 	@Column(name = "torn")
 	private int torn=0;
+<<<<<<< HEAD
 	@Lob
 	@Column(name = "xat")
 	private Xat xat;
 	@OneToMany(mappedBy="partida", cascade=CascadeType.ALL)
 	private Set<Vot> votspartida = new HashSet<Vot>();
+=======
+	//@Lob
+	//@Column(name = "xat")
+	//private Xat xat;
+	
+>>>>>>> 37f406776c63ec79b16232b17248a3cbb7143e83
 	public Partida(int id, String user, int torn, Xat xat) {
 		super();
 		this.id = id;
 		this.user = user;
 		this.torn = torn;
-		this.xat = xat;
+		//this.xat = xat;
 	}
 	
 	public Partida() {
@@ -62,10 +69,10 @@ public class Partida {
 	public void setTorn(int torn) {
 		this.torn = torn;
 	}
-	public Xat getXat() {
+	/*public Xat getXat() {
 		return xat;
 	}
 	public void setXat(Xat xat) {
 		this.xat = xat;
-	}
+	}*/
 }
