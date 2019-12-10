@@ -43,6 +43,12 @@ public class User {
 	@OneToMany(mappedBy="usering", cascade=CascadeType.ALL)
 	private Set<Menssage> menssage = new HashSet<Menssage>();
 
+	@OneToMany(mappedBy="sender", cascade=CascadeType.ALL)
+	private Set<Vot> votsSender = new HashSet<Vot>();
+	
+	@OneToMany(mappedBy="receiver", cascade=CascadeType.ALL)
+	private Set<Vot> votsReceiver = new HashSet<Vot>();
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
