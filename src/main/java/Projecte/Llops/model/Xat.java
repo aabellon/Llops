@@ -17,9 +17,9 @@ private int id=0;
 	@Column(name = "sender")
 
 private String sender;
-	@Column(name = "partida")
-
-private Partida partida;
+	@Column(name = "partidaX")
+	
+private Partida partidaX;
 	@Column(name = "content")
 
 private String content ;
@@ -33,7 +33,7 @@ public Xat(int id, String sender, Partida partida, String content, Date date) {
 	super();
 	this.id = id;
 	this.sender = sender;
-	this.partida = partida;
+	this.partidaX = partida;
 	this.content = content;
 	this.date = date;
 }
@@ -50,10 +50,10 @@ public void setSender(String sender) {
 	this.sender = sender;
 }
 public Partida getPartida() {
-	return partida;
+	return partidaX;
 }
 public void setPartida(Partida partida) {
-	this.partida = partida;
+	this.partidaX = partida;
 }
 public String getContent() {
 	return content;
