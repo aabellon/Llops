@@ -22,7 +22,7 @@ public class Vot {
 	@Column(name = "Receiver")
 	private boolean receiver;
 	@Column(name = "partida")
-	private Partida partida;
+	/*private Partida partida;*/
 	private int torn = 0;
 
 	public Vot() {
@@ -34,7 +34,7 @@ public class Vot {
 		this.id = id;
 		this.sender = sender;
 		this.receiver = receiver;
-		this.partida = partida;
+		//this.partida = partida;
 		this.torn = torn;
 	}
 
@@ -61,7 +61,7 @@ public class Vot {
 	public void setReceiver(boolean receiver) {
 		this.receiver = receiver;
 	}
-
+/*
 	public Partida getPartida() {
 		return partida;
 	}
@@ -69,7 +69,7 @@ public class Vot {
 	public void setPartida(Partida partida) {
 		this.partida = partida;
 	}
-
+*/
 	public int getTorn() {
 		return torn;
 	}

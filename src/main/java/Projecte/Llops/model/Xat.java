@@ -13,13 +13,14 @@ public class Xat {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
-private int id=0;
+	private int id=0;
+	
 	@Column(name = "sender")
 
 private String sender;
-	@Column(name = "partida")
+//	@Column(name = "partida")
 
-private Partida partida;
+//private Partida partida;
 	@Column(name = "content")
 
 private String content ;
@@ -33,7 +34,7 @@ public Xat(int id, String sender, Partida partida, String content, Date date) {
 	super();
 	this.id = id;
 	this.sender = sender;
-	this.partida = partida;
+	//this.partida = partida;
 	this.content = content;
 	this.date = date;
 }
@@ -49,12 +50,12 @@ public String getSender() {
 public void setSender(String sender) {
 	this.sender = sender;
 }
-public Partida getPartida() {
+/*public Partida getPartida() {
 	return partida;
 }
 public void setPartida(Partida partida) {
 	this.partida = partida;
-}
+}*/
 public String getContent() {
 	return content;
 }

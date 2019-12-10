@@ -28,5 +28,8 @@
 		<mapping class="Projecte.Llops.model.RolJugadorPartida" />
 		<mapping class="Projecte.Llops.model.Vot" />
 		<mapping class="Projecte.Llops.model.Xat" />
+		<mapping class="Projecte.Llops.model.User" />
+		<mapping class="Projecte.Llops.model.Menssage" />
+		
 	</session-factory>
 </hibernate-configuration>
