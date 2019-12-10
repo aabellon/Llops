@@ -1,4 +1,4 @@
-package ProjectoLobos.CTL;
+package Projecte.Llops.Controller;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,7 +23,7 @@ public class Partida {
 	@Column(name = "xat")
 	private xat xat;
 	
-	public Partida(int id, String user, int torn, ProjectoLobos.CTL.xat xat) {
+	public Partida(int id, String user, int torn, xat xat) {
 		super();
 		this.id = id;
 		this.user = user;

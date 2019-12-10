@@ -1,4 +1,4 @@
-package ProjectoLobos.CTL;
+package Projecte.Llops.Controller;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
