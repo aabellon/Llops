@@ -9,10 +9,13 @@ import org.hibernate.annotations.Type;
 @Table(name = "Vot")
 public class Vot {
 private int id =0;
+@Column(name="sender")
+
 private String sender;
 @Type(type="numeric_boolean") 
 @Column(name="Receiver")
 private boolean receiver ;
+@Column(name="partida")
 private Partida partida;
 private int torn=0;
 public Vot() {
