@@ -1,6 +1,9 @@
 package Projecte.Llops.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Type;
@@ -8,6 +11,9 @@ import org.hibernate.annotations.Type;
 @Entity
 @Table(name = "Vot")
 public class Vot {
+@Id
+@GeneratedValue(strategy= GenerationType.AUTO)
+@Column(name="id")
 private int id =0;
 private String sender;
 @Type(type="numeric_boolean") 
