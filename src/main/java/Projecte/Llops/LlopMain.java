@@ -1,4 +1,4 @@
-package Projecte.Llops.Main;
+package Projecte.Llops;
 
 import Projecte.Llops.DAO.MenssageDao;
 import Projecte.Llops.DAO.UserDao;

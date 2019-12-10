@@ -1,4 +1,4 @@
-package Projecte.Llops.Controller;
+package Projecte.Llops.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,29 +10,29 @@ import javax.persistence.Table;
 import Projecte.Llops.model.User;
 
 @Entity
-@Table(name = "RolJugadorPartida")
-public class RolJugadorPartida {
+@Table(name = "Mort")
+public class Mort {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
 	private int id;
 	@Column(name = "user")
 	private User user;
-	@Column(name = "rol")
-	private Rol rol;
 	@Column(name = "partida")
 	private Partida partida;
+	@Column(name = "torn")
+	private int torn;
 
-	public RolJugadorPartida() {
+	public Mort() {
 		super();
 	}
 
-	public RolJugadorPartida(int id, User user, Rol rol, Partida partida) {
+	public Mort(int id, User user, Partida partida, int torn) {
 		super();
 		this.id = id;
 		this.user = user;
-		this.rol = rol;
 		this.partida = partida;
+		this.torn = torn;
 	}
 
 	public int getId() {
@@ -51,14 +51,6 @@ public class RolJugadorPartida {
 		this.user = user;
 	}
 
-	public Rol getRol() {
-		return rol;
-	}
-
-	public void setRol(Rol rol) {
-		this.rol = rol;
-	}
-
 	public Partida getPartida() {
 		return partida;
 	}
@@ -66,5 +58,13 @@ public class RolJugadorPartida {
 	public void setPartida(Partida partida) {
 		this.partida = partida;
 	}
-}
 
+	public int getTorn() {
+		return torn;
+	}
+
+	public void setTorn(int torn) {
+		this.torn = torn;
+	}
+
+}

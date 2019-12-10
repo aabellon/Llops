@@ -11,7 +11,7 @@
 		<!-- Database Connection Settings -->
 		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
 <!-- Especificar aqui la DB -->		
-		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/Lobos?serverTimezone=UTC</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/llops?serverTimezone=UTC</property>
 		<property name="hibernate.connection.username">root</property>
 		<property name="hibernate.connection.password">super3</property>
 <!-- Crea tablas automáticamente -->		
@@ -22,11 +22,11 @@
 		<property name="hibernate.current_session_context_class">org.hibernate.context.internal.ThreadLocalSessionContext</property>
 
 <!-- Aqui van las clases que mapees. TODAS -->
-		<mapping class="Projecte.Llops.Controller.Mort" />
-		<mapping class="Projecte.Llops.Controller.Partida" />
-		<mapping class="Projecte.Llops.Controller.Rol" />
-		<mapping class="Projecte.Llops.Controller.RolJugadorPartida" />
-		<mapping class="Projecte.Llops.Controller.Vot" />
-		<mapping class="Projecte.Llops.Controller.xat" />
+		<mapping class="Projecte.Llops.model.Mort" />
+		<mapping class="Projecte.Llops.model.Partida" />
+		<mapping class="Projecte.Llops.model.Rol" />
+		<mapping class="Projecte.Llops.model.RolJugadorPartida" />
+		<mapping class="Projecte.Llops.model.Vot" />
+		<mapping class="Projecte.Llops.model.Xat" />
 	</session-factory>
 </hibernate-configuration>

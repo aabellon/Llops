@@ -1,4 +1,4 @@
-package Projecte.Llops.Controller;
+package Projecte.Llops.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

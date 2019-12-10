@@ -1,70 +1,64 @@
-package Projecte.Llops.Controller;
+package Projecte.Llops.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
-import Projecte.Llops.model.User;
-
 @Entity
-@Table(name = "Mort")
-public class Mort {
+@Table(name = "Partida")
+public class Partida {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
-	private int id;
+	private int id =0;
 	@Column(name = "user")
-	private User user;
-	@Column(name = "partida")
-	private Partida partida;
+	private String user;
 	@Column(name = "torn")
-	private int torn;
-
-	public Mort() {
-		super();
-	}
-
-	public Mort(int id, User user, Partida partida, int torn) {
+	private int torn=0;
+	@Lob
+	@Column(name = "xat")
+	private Xat xat;
+	
+	public Partida(int id, String user, int torn, Xat xat) {
 		super();
 		this.id = id;
 		this.user = user;
-		this.partida = partida;
 		this.torn = torn;
+		this.xat = xat;
+	}
+	
+	public Partida() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	public int getId() {
 		return id;
 	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
-	public User getUser() {
+	public String getUser() {
 		return user;
 	}
-
-	public void setUser(User user) {
+	public void setUser(String user) {
 		this.user = user;
 	}
-
-	public Partida getPartida() {
-		return partida;
-	}
-
-	public void setPartida(Partida partida) {
-		this.partida = partida;
-	}
-
+	
 	public int getTorn() {
 		return torn;
 	}
-
 	public void setTorn(int torn) {
 		this.torn = torn;
 	}
-
+	public Xat getXat() {
+		return xat;
+	}
+	public void setXat(Xat xat) {
+		this.xat = xat;
+	}
 }
