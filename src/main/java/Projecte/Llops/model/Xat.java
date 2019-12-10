@@ -14,9 +14,17 @@ public class Xat {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
 private int id=0;
+	@Column(name = "sender")
+
 private String sender;
+	@Column(name = "partida")
+
 private Partida partida;
+	@Column(name = "content")
+
 private String content ;
+	@Column(name = "date")
+
 private Date date;
 public Xat() {
 	super();
