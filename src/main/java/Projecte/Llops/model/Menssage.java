@@ -38,7 +38,7 @@ public class Menssage {
 	Date date;
 	
 	@ManyToOne
-	@JoinColumn(name="User")
+	@JoinColumn(name="usering")
 	private User usering;
 
 	public int getId() {

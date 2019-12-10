@@ -7,6 +7,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+<<<<<<< HEAD
+=======
+import javax.persistence.OneToMany;
+>>>>>>> b373a2a97b7ccde5d39312dd2acd1e79a65bdeea
 import javax.persistence.Table;
 
 import Projecte.Llops.model.User;
@@ -18,6 +22,7 @@ public class RolJugadorPartida {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
 	private int id;
+<<<<<<< HEAD
 	
 	@ManyToOne()
 	@JoinColumn(name="user")
@@ -27,6 +32,14 @@ public class RolJugadorPartida {
 	@JoinColumn(name="rol")
 	private Rol rol;
 	
+=======
+	@Column(name = "user")
+	private User user;
+	@Column(name = "rol")
+	private Rol rol;
+	@OneToMany
+	@JoinColumn(name="partida")
+>>>>>>> b373a2a97b7ccde5d39312dd2acd1e79a65bdeea
 	private Partida partida;
 
 	public RolJugadorPartida() {

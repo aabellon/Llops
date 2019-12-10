@@ -25,9 +25,10 @@ public class Vot {
 	@ManyToOne
 	@JoinColumn(name="receiver")
 	private User receiver;
-	
+	@ManyToOne
+	@JoinColumn(name="partida")
 	private Partida partida;
-
+	@Column(name = "torn")
 	private int torn = 0;
 
 	public Vot() {
@@ -39,7 +40,7 @@ public class Vot {
 		this.id = id;
 		this.sender = sender;
 		this.receiver = receiver;
-		//this.partida = partida;
+		this.partida = partida;
 		this.torn = torn;
 	}
 
@@ -66,7 +67,6 @@ public class Vot {
 	public void setReceiver(User receiver) {
 		this.receiver = receiver;
 	}
-/*
 	public Partida getPartida() {
 		return partida;
 	}
@@ -74,7 +74,7 @@ public class Vot {
 	public void setPartida(Partida partida) {
 		this.partida = partida;
 	}
-*/
+
 	public int getTorn() {
 		return torn;
 	}
