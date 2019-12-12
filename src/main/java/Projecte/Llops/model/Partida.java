@@ -10,9 +10,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.ManyToAny;
 
 @Entity
 @Table(name = "Partida")
@@ -32,13 +37,16 @@ public class Partida {
 	private Set<Vot> votspartida = new HashSet<Vot>();
 	@OneToMany(mappedBy="partida", cascade=CascadeType.ALL)
 	private Set<RolJugadorPartida> Rolpartida = new HashSet<RolJugadorPartida>();
-
+	
+	@ManyToMany(cascade = {CascadeType.REFRESH})
+	@JoinTable(name="Partida",joinColumns= {@JoinColumn(name="user")},inverseJoinColumns= {@JoinColumn(name="id")})
+	private Set<User> Jugadores  = new HashSet();
 	public Partida(int id, String user, int torn, Xat xat) {
 		super();
 		this.id = id;
 		this.user = user;
 		this.torn = torn;
-		//this.xat = xat;
+		this.xat = xat;
 	}
 	
 	public Partida() {
