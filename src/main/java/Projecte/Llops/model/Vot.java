@@ -28,8 +28,8 @@ public class Vot {
 	
 	private Partida partida;
 
+	
 	@Column(name = "torn")
-
 	private int torn = 0;
 
 	public Vot() {
