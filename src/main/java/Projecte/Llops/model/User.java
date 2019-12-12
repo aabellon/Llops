@@ -10,14 +10,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.transaction.Transactional;
 
 @Entity
 @Table(name="User")
+@Transactional()
 public class User {
 	
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	int id;
@@ -57,6 +62,10 @@ public class User {
 	
 	@OneToMany(mappedBy="user", cascade=CascadeType.ALL)
 	private Set<User> usersMort = new HashSet<User>();
+	
+	@ManyToMany(cascade = {CascadeType.REFRESH})
+	@JoinTable(name="UsersPartidas",joinColumns= {@JoinColumn(name="idUser")},inverseJoinColumns= {@JoinColumn(name="idPartida")})
+	private Set<Partida> partidas = new HashSet<Partida>();
 	
 	@Override
 	public int hashCode() {
@@ -124,6 +133,18 @@ public class User {
 
 
 	
+
+
+	public Set<Partida> getPartidas() {
+		return partidas;
+	}
+
+
+
+	public void setPartidas(Set<Partida> partidas) {
+		this.partidas = partidas;
+	}
+
 
 
 	public User(String userName, String password, String alias) {

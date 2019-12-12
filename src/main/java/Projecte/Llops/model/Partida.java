@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -36,6 +37,8 @@ public class Partida {
 	private Set<Mort> morts = new HashSet<Mort>();
 	@OneToMany(mappedBy="partida", cascade=CascadeType.ALL)
 	private Set<Xat> xats = new HashSet<Xat>();
+	@ManyToMany(cascade = CascadeType.ALL, mappedBy="partidas")
+	Set<User> users = new HashSet<User>();
 	public Partida(int id, String user, int torn, Xat xat) {
 		super();
 		this.id = id;

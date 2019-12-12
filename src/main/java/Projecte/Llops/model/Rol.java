@@ -27,7 +27,7 @@ public class Rol {
 	private String descripcio;
 	
 	@OneToMany(mappedBy="rol", cascade=CascadeType.ALL)
-	private Set<RolJugadorPartida> rolJugs = new HashSet();
+	private Set<RolJugadorPartida> rolJugs = new HashSet<RolJugadorPartida>();
 	
 	public Rol() {
 		super();
