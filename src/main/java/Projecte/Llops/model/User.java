@@ -19,7 +19,7 @@ public class User {
 	
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	int id;
 	
 	@Column(name="userName")
@@ -40,8 +40,11 @@ public class User {
 	@Column(name="percentatgeVict")
 	String percentatgeVict;
 	
-	@OneToMany(mappedBy="usering", cascade=CascadeType.ALL)
-	private Set<Menssage> menssage = new HashSet<Menssage>();
+	@OneToMany(mappedBy="sender", cascade=CascadeType.ALL)
+	private Set<Menssage> menssageSender = new HashSet<Menssage>();
+	
+	@OneToMany(mappedBy="receiver", cascade=CascadeType.ALL)
+	private Set<Menssage> menssageReceiver = new HashSet<Menssage>();
 
 	@OneToMany(mappedBy="sender", cascade=CascadeType.ALL)
 	private Set<Vot> votsSender = new HashSet<Vot>();
@@ -61,7 +64,6 @@ public class User {
 		int result = 1;
 		result = prime * result + ((alias == null) ? 0 : alias.hashCode());
 		result = prime * result + ((dataRegistre == null) ? 0 : dataRegistre.hashCode());
-		result = prime * result + ((menssage == null) ? 0 : menssage.hashCode());
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
 		result = prime * result + ((pathAvatar == null) ? 0 : pathAvatar.hashCode());
 		result = prime * result + ((percentatgeVict == null) ? 0 : percentatgeVict.hashCode());
@@ -69,52 +71,7 @@ public class User {
 		return result;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		User other = (User) obj;
-		if (alias == null) {
-			if (other.alias != null)
-				return false;
-		} else if (!alias.equals(other.alias))
-			return false;
-		if (dataRegistre == null) {
-			if (other.dataRegistre != null)
-				return false;
-		} else if (!dataRegistre.equals(other.dataRegistre))
-			return false;
-		if (menssage == null) {
-			if (other.menssage != null)
-				return false;
-		} else if (!menssage.equals(other.menssage))
-			return false;
-		if (password == null) {
-			if (other.password != null)
-				return false;
-		} else if (!password.equals(other.password))
-			return false;
-		if (pathAvatar == null) {
-			if (other.pathAvatar != null)
-				return false;
-		} else if (!pathAvatar.equals(other.pathAvatar))
-			return false;
-		if (percentatgeVict == null) {
-			if (other.percentatgeVict != null)
-				return false;
-		} else if (!percentatgeVict.equals(other.percentatgeVict))
-			return false;
-		if (userName == null) {
-			if (other.userName != null)
-				return false;
-		} else if (!userName.equals(other.userName))
-			return false;
-		return true;
-	}
+
 
 	public String getUserName() {
 		return userName;
@@ -164,15 +121,11 @@ public class User {
 		this.percentatgeVict = percentatgeVict;
 	}
 
-	public Set<Menssage> getMessage() {
-		return menssage;
-	}
 
-	public void setMessage(Set<Menssage> message) {
-		this.menssage = message;
-	}
 
 	
+
+
 	public User(String userName, String password, String alias) {
 		super();
 		this.userName = userName;
@@ -180,18 +133,20 @@ public class User {
 		this.alias = alias;
 	}
 
-	public User(String userName, String password, String alias, Date dataRegistre, String pathAvatar,
-			String percentatgeVict, Set<Menssage> message) {
+
+	
+	public User(int id, String userName, String password, String alias, Date dataRegistre, String pathAvatar,
+			String percentatgeVict) {
 		super();
+		this.id = id;
 		this.userName = userName;
 		this.password = password;
 		this.alias = alias;
 		this.dataRegistre = dataRegistre;
 		this.pathAvatar = pathAvatar;
 		this.percentatgeVict = percentatgeVict;
-		this.menssage = message;
 	}
-	
+
 	public User() {
 		
 	}

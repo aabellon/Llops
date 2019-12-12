@@ -25,10 +25,11 @@ public class Vot {
 	@ManyToOne
 	@JoinColumn(name="receiver")
 	private User receiver;
-	@ManyToOne
-	@JoinColumn(name="partida")
+	
 	private Partida partida;
+
 	@Column(name = "torn")
+
 	private int torn = 0;
 
 	public Vot() {

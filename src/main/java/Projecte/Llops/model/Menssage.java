@@ -22,11 +22,13 @@ public class Menssage {
 	@Column(name = "id")
 	int id;
 	
-	@Column(name = "sender")
-	String sender;
+	@ManyToOne()
+	@JoinColumn(name="sender")
+	User sender;
 	
-	@Column(name = "receiver")
-	String receiver;
+	@ManyToOne()
+	@JoinColumn(name="receiver")
+	User receiver;
 	
 	@Column(name = "type")
 	String type;
@@ -37,9 +39,9 @@ public class Menssage {
 	@Column(name = "date")
 	Date date;
 	
-	@ManyToOne
+	/*@ManyToOne
 	@JoinColumn(name="usering")
-	private User usering;
+	private User usering;*/
 
 	public int getId() {
 		return id;
@@ -49,19 +51,19 @@ public class Menssage {
 		this.id = id;
 	}
 
-	public String getSender() {
+	public User getSender() {
 		return sender;
 	}
 
-	public void setSender(String sender) {
+	public void setSender(User sender) {
 		this.sender = sender;
 	}
 
-	public String getReceiver() {
+	public User getReceiver() {
 		return receiver;
 	}
 
-	public void setReceiver(String receiver) {
+	public void setReceiver(User receiver) {
 		this.receiver = receiver;
 	}
 
@@ -111,7 +113,7 @@ public class Menssage {
 		return true;
 	}
 
-	public Menssage(int id, String sender, String receiver, String type, String content, Date date) {
+	public Menssage(int id, User sender, User receiver, String type, String content, Date date) {
 		super();
 		this.id = id;
 		this.sender = sender;
