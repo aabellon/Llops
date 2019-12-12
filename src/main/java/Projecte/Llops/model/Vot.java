@@ -25,7 +25,12 @@ public class Vot {
 	@ManyToOne
 	@JoinColumn(name="receiver")
 	private User receiver;
+<<<<<<< HEAD
 	@ManyToOne
+=======
+	
+	@ManyToOne()
+>>>>>>> faf8d46a6e9d0931183b1cba6521032a3c7c06c1
 	@JoinColumn(name="partida")
 	private Partida partida;
 
