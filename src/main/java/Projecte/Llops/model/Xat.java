@@ -16,18 +16,18 @@ public class Xat {
 	private int id=0;
 	
 	@Column(name = "sender")
-
-private String sender;
-	@Column(name = "partidaX")
+	private String sender;
 	
-private Partida partidaX;
+	@Column(name = "partidaX")
+	private Partida partidaX;
 
 	@Column(name = "content")
-
-private String content ;
+	private String content ;
+	
 	@Column(name = "date")
-
-private Date date;
+	private Date date;
+	
+	
 public Xat() {
 	super();
 }

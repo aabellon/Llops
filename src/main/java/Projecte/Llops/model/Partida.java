@@ -39,7 +39,7 @@ public class Partida {
 		this.id = id;
 		this.user = user;
 		this.torn = torn;
-		//this.xat = xat;
+		this.xat = xat;
 	}
 	
 	public Partida() {
@@ -66,10 +66,10 @@ public class Partida {
 	public void setTorn(int torn) {
 		this.torn = torn;
 	}
-	/*public Xat getXat() {
+	public Xat getXat() {
 		return xat;
 	}
 	public void setXat(Xat xat) {
 		this.xat = xat;
-	}*/
+	}
 }
