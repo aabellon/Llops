@@ -17,6 +17,7 @@ public class Xat {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
+
 	private int id = 0;
 
 	@Column(name = "sender")
