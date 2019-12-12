@@ -26,7 +26,7 @@ public class RolJugadorPartida {
 	@JoinColumn(name="rol")
 	private Rol rol;
 
-	@OneToMany
+	@ManyToOne()
 	@JoinColumn(name="partida")
 	private Partida partida;
 

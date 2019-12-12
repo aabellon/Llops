@@ -53,7 +53,7 @@ public class User {
 	private Set<Vot> votsReceiver = new HashSet<Vot>();
 	
 	@OneToMany(mappedBy="user", cascade=CascadeType.ALL)
-	private Set<User> users = new HashSet<User>();
+	private Set<User> user = new HashSet<User>();
 	
 	@OneToMany(mappedBy="user", cascade=CascadeType.ALL)
 	private Set<User> usersMort = new HashSet<User>();
