@@ -5,9 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import Projecte.Llops.model.User;
 
 @Entity
 @Table(name = "RolJugadorPartida")
@@ -16,12 +17,18 @@ public class RolJugadorPartida {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
 	private int id;
-	//@Column(name = "user")
-	//private User user;
-	//@Column(name = "rol")
-	//private Rol rol;
-	//@Column(name = "partida")
-	//private Partida partida;
+	
+	@ManyToOne()
+	@JoinColumn(name="user")
+	private User user;
+	
+	@ManyToOne()
+	@JoinColumn(name="rol")
+	private Rol rol;
+
+	@OneToMany
+	@JoinColumn(name="partida")
+	private Partida partida;
 
 	public RolJugadorPartida() {
 		super();
@@ -30,9 +37,9 @@ public class RolJugadorPartida {
 	public RolJugadorPartida(int id, User user, Rol rol, Partida partida) {
 		super();
 		this.id = id;
-		//this.user = user;
-		//this.rol = rol;
-		//this.partida = partida;
+		this.user = user;
+		this.rol = rol;
+		this.partida = partida;
 	}
 
 	public int getId() {
@@ -42,7 +49,7 @@ public class RolJugadorPartida {
 	public void setId(int id) {
 		this.id = id;
 	}
-	/*
+	
 	public User getUser() {
 		return user;
 	}
@@ -65,6 +72,6 @@ public class RolJugadorPartida {
 
 	public void setPartida(Partida partida) {
 		this.partida = partida;
-	}*/
+	}
 }
 

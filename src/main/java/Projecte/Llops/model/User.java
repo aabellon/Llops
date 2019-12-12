@@ -40,14 +40,20 @@ public class User {
 	@Column(name="percentatgeVict")
 	String percentatgeVict;
 	
-	@OneToMany(mappedBy="usering", cascade=CascadeType.ALL)
-	private Set<Menssage> menssage = new HashSet<Menssage>();
+	@OneToMany(mappedBy="sender", cascade=CascadeType.ALL)
+	private Set<Menssage> menssageSender = new HashSet<Menssage>();
+	
+	@OneToMany(mappedBy="receiver", cascade=CascadeType.ALL)
+	private Set<Menssage> menssageReceiver = new HashSet<Menssage>();
 
 	@OneToMany(mappedBy="sender", cascade=CascadeType.ALL)
 	private Set<Vot> votsSender = new HashSet<Vot>();
 	
 	@OneToMany(mappedBy="receiver", cascade=CascadeType.ALL)
 	private Set<Vot> votsReceiver = new HashSet<Vot>();
+	
+	@OneToMany(mappedBy="user", cascade=CascadeType.ALL)
+	private Set<User> users = new HashSet<User>();
 	
 	@Override
 	public int hashCode() {
