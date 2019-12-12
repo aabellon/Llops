@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import Projecte.Llops.model.User;
@@ -16,9 +18,11 @@ public class Mort {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
 	private int id;
-	@Column(name = "user")
+	@ManyToOne()
+	@JoinColumn(name="user")
 	private User user;
-	@Column(name = "partida")
+	@ManyToOne()
+	@JoinColumn(name="partida")
 	private Partida partida;
 	@Column(name = "torn")
 	private int torn;

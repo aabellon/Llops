@@ -37,10 +37,17 @@ public class Partida {
 	private Set<Vot> votspartida = new HashSet<Vot>();
 	@OneToMany(mappedBy="partida", cascade=CascadeType.ALL)
 	private Set<RolJugadorPartida> Rolpartida = new HashSet<RolJugadorPartida>();
+<<<<<<< HEAD
 	
 	@ManyToMany(cascade = {CascadeType.REFRESH})
 	@JoinTable(name="Partida",joinColumns= {@JoinColumn(name="user")},inverseJoinColumns= {@JoinColumn(name="id")})
 	private Set<User> Jugadores  = new HashSet();
+=======
+	@OneToMany(mappedBy="partida", cascade=CascadeType.ALL)
+	private Set<Mort> morts = new HashSet<Mort>();
+	@OneToMany(mappedBy="partida", cascade=CascadeType.ALL)
+	private Set<Xat> xats = new HashSet<Xat>();
+>>>>>>> faf8d46a6e9d0931183b1cba6521032a3c7c06c1
 	public Partida(int id, String user, int torn, Xat xat) {
 		super();
 		this.id = id;
