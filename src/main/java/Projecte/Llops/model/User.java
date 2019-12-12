@@ -52,6 +52,9 @@ public class User {
 	@OneToMany(mappedBy="user", cascade=CascadeType.ALL)
 	private Set<User> users = new HashSet<User>();
 	
+	@OneToMany(mappedBy="user", cascade=CascadeType.ALL)
+	private Set<User> usersMort = new HashSet<User>();
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

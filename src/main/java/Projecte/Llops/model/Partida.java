@@ -32,7 +32,8 @@ public class Partida {
 	private Set<Vot> votspartida = new HashSet<Vot>();
 	@OneToMany(mappedBy="partida", cascade=CascadeType.ALL)
 	private Set<RolJugadorPartida> Rolpartida = new HashSet<RolJugadorPartida>();
-
+	@OneToMany(mappedBy="partida", cascade=CascadeType.ALL)
+	private Set<Mort> morts = new HashSet<Mort>();
 	public Partida(int id, String user, int torn, Xat xat) {
 		super();
 		this.id = id;
