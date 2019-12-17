@@ -14,6 +14,7 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "Partida")
@@ -38,6 +39,7 @@ public class Partida {
 	@OneToMany(mappedBy="partida", cascade=CascadeType.ALL)
 	private Set<Xat> xats = new HashSet<Xat>();
 	@ManyToMany(cascade = CascadeType.ALL, mappedBy="partidas")
+	
 	Set<User> users = new HashSet<User>();
 	public Partida(int id, String user, int torn, Xat xat) {
 		super();
