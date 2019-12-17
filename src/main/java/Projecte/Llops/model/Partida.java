@@ -47,7 +47,12 @@ public class Partida {
 	private Set<Mort> morts = new HashSet<Mort>();
 	@OneToMany(mappedBy="partida", cascade=CascadeType.ALL)
 	private Set<Xat> xats = new HashSet<Xat>();
+<<<<<<< HEAD
 >>>>>>> faf8d46a6e9d0931183b1cba6521032a3c7c06c1
+=======
+	@ManyToMany(cascade = CascadeType.ALL, mappedBy="partidas")
+	Set<User> users = new HashSet<User>();
+>>>>>>> 4d2222aa0fa55eb6841a791ba125ff0cef288324
 	public Partida(int id, String user, int torn, Xat xat) {
 		super();
 		this.id = id;
