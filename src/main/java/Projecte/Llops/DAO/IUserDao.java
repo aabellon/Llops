@@ -14,5 +14,5 @@ public interface IUserDao extends IGenericDao<User,Integer>{
 	List<User> list();
 
 	void delete(Integer id);
-
+	void registre(User user, String pw , String Path);
 }
