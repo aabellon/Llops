@@ -30,23 +30,20 @@ public class UserDao extends GenericDao<User,Integer> implements IUserDao {
 			System.out.println("___________Registro de usuario Fallido porfavor escriba una Contraseña_______________");
 
 		}
-	//	else {
+		//else {
 		//	System.out.println("Ruta de la imagen:");
-			//InsertarImagen ventana = new InsertarImagen();
 			
-			File archivofoto = new File(Path); 
-		//	try {
+		//	File archivofoto = new File(Path); 
+			//try {
 		//		FileInputStream convertir_imagen = new FileInputStream (archivofoto);
-				//Aqui es donse se tiene que temrinar de hacer la imagen e inserla al sql el texto ya se convierte en un strign asi que solo teneis que insertalo en la base datos
-		//	} catch (FileNotFoundException e) {
+			//} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 		//		e.printStackTrace();
 		//	} 
-		//}
+	//	}
 		user.setAlias(usuario);
 		user.setPassword(pw);
-		
-		System.out.println("___________Registro con exito_______________");
 
 	}
-}
+	}
+	

@@ -123,6 +123,15 @@ public class Menssage {
 		this.date = date;
 	}
 	
+	public Menssage( User sender, User receiver, String type, String content) {
+		super();
+		this.sender = sender;
+		this.receiver = receiver;
+		this.type = type;
+		this.content = content;
+		this.date = new Date();
+	}
+	
 	public Menssage() {
 
 	}
