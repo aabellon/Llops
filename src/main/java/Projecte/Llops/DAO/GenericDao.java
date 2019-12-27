@@ -89,7 +89,7 @@ public class GenericDao<T, ID extends Serializable> implements IGenericDao<T, ID
 		Session session = sessionFactory.getCurrentSession();
 		try {
 
-			Query query = (Query) session.createQuery("SELECT e FROM " + getEntityClass().getName() + " e");
+			Query query = (Query) session.createQuery("SELECT * FROM " + getEntityClass().getName() + " e ");
 			List<T> entities = ((IGenericDao<T, ID>) query).list();
 
 			return entities;
