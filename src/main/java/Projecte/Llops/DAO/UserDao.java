@@ -1,5 +1,6 @@
 package Projecte.Llops.DAO;
 
+import java.util.List;
 import java.util.Scanner;
 
 import Projecte.Llops.model.*;
@@ -8,8 +9,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
+import org.hibernate.query.Query;
 
- import Projecte.Llops.model.Partida;
+import Projecte.Llops.model.Partida;
 import Projecte.Llops.model.User;
 //El modulo no necesita nada que no lo trate el genérico así que lo podemos dejar vacío
 public class UserDao extends GenericDao<User,Integer> implements IUserDao {
@@ -71,8 +73,43 @@ public class UserDao extends GenericDao<User,Integer> implements IUserDao {
 	//	}
 		user.setAlias(usuario);
 		user.setPassword(pw);
+		Session session = sessionFactory.getCurrentSession();
+
+ 		try {
+			session.beginTransaction();
+			session.saveOrUpdate(user);
+
+ 			session.getTransaction().commit();
+		} catch (HibernateException e) {
+			e.printStackTrace();
+			if (session != null && session.getTransaction() != null) {
+				System.out.println("\n.......Transaction Is Being Rolled Back.......");
+				session.getTransaction().rollback();
+			}
+			e.printStackTrace();
+ 		}
 
 	}
-	
+	public boolean login (String user, String pw) {
+		Session session = sessionFactory.getCurrentSession();
+		int i =0;
+		Boolean correct=false;
+		 Query query = session.createQuery("SELECT * FROM User");
+		 List<User> Users = query.list();
+		 for (User usuarios : Users) {
+			 if(user != Users.get(i).getAlias() && pw != Users.get(i).getPassword()) {
+				 correct=false;
+			 }
+			 else {
+				 correct=true;
+				 break;
+			 }
+		 }
+		 if(correct== true) {
+			 System.out.println("Login correcto");
+		 }
+		return correct;
+		
+	}
 	}
 	
