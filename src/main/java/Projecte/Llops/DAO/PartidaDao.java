@@ -16,4 +16,5 @@ public class PartidaDao extends GenericDao<Partida,Integer> implements IPartidaD
 		p.setTorn(p.getTorn()+1);
 		
 	}
+
 }
