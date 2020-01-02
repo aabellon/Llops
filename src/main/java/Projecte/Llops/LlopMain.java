@@ -20,7 +20,7 @@ public class LlopMain {
 		Menssage mensa1 = new Menssage();
 		Partida p = new Partida();
 		
-		uDAO.afegirPartida(user1, p);
+		uDAO.login("Hola", "Hola");
 		//user2.saveOrUpdate(user1);
 		//mensa.saveOrUpdate(mensa1);
 		/////////////////////////////////

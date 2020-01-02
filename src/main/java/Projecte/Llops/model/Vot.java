@@ -72,7 +72,12 @@ public class Vot {
 	}
 	public Partida getPartida() {
 		return partida;
+	}	
+
+	public User getReceiver() {
+		return receiver;
 	}
+
 
 	public void setPartida(Partida partida) {
 		this.partida = partida;

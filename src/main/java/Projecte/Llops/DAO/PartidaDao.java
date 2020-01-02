@@ -16,5 +16,14 @@ public class PartidaDao extends GenericDao<Partida,Integer> implements IPartidaD
 		p.setTorn(p.getTorn()+1);
 		
 	}
+	public void fiTorn(Partida p,Vot v) {
+		if (p.getTorn()%2==0) {
+		System.out.println("Es de dia");
+	}
+		else {
+			System.out.println("Es de noche");
 
-}
+		}
+		v.getReceiver();
+	}
+	}
