@@ -39,7 +39,6 @@ public class VotDao extends GenericDao<Vot,Integer> implements IVotDao {
 		
 		List<Vot> votssaux = this.Listar();
 		Vot vot1 = new Vot(u1,u2,p,p.getTorn());
-		
 		if(p.getTorn()%2!=0) {
 			votssaux.add(vot1);
 		}

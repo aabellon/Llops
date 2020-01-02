@@ -38,9 +38,8 @@ public class Vot {
 		super();
 	}
 
-	public Vot(int id, User sender, User receiver, Partida partida, int torn) {
+	public Vot(User sender, User receiver, Partida partida, int torn) {
 		super();
-		this.id = id;
 		this.sender = sender;
 		this.receiver = receiver;
 		this.partida = partida;
